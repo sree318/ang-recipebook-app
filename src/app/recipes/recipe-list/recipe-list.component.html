@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success">New Recipe</button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-xs-12">
+    <!-- For each element in the recipes array, a new instance of the <app-recipe-item> component is created. -->
+    <!-- Here [recipe] is a property sent to app-recipe-item.ts and recipes is from app-recipe-item.ts -->
+    <!-- (recipeSelected is an event emitted from app-recipe-item.ts and if its emitted the respective method gets called) -->
+    <app-recipe-item
+      *ngFor="let recipeEl of recipes"
+      [recipe]="recipeEl"
+      (recipeSelected)="onRecipeSelected(recipeEl)"
+    ></app-recipe-item>
+  </div>
+</div>

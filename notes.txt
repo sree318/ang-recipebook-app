@@ -1,0 +1,4 @@
+1.<col-md-6> would create a column that takes up half of the available space on medium-sized devices.
+2.<pull-left> is a class used in CSS frameworks like Bootstrap to float an element to the left within its container
+3.<img-responsive> is a Bootstrap class used to make images responsive within a web page. 
+When you apply this class to an <img> element, it ensures that the image scales appropriately to fit the size of its container while maintaining its aspect ratio.
