@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Ingredient } from '../shared/Ingredient.model';
 import { ShoppingListService } from './shopping-list.service';
 import { Subscription } from 'rxjs';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
@@ -21,7 +22,11 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     );
     console.log('slcomp list is called');
   }
+
   ngOnDestroy(): void {
     this.igChangeSub.unsubscribe();
+  }
+  onEditItem(index: number) {
+    this.slService.startedEditing.next(index);
   }
 }
