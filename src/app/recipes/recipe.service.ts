@@ -40,4 +40,8 @@ export class RecipeService {
     this.slService.addIngredients(ingredients);
     console.log('addIngredientsToShoppingList list is called');
   }
+
+  getRecipe(id: number) {
+    return this.recipes[id];
+  }
 }
