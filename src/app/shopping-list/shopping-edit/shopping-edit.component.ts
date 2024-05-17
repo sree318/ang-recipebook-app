@@ -45,8 +45,11 @@ export class ShoppingEditComponent {
     } else {
       this.slService.addIngredient(newIngredient);
     }
+<<<<<<< HEAD
     this.editMode = false;
     form.reset();
+=======
+>>>>>>> c6d00a74c297d3ffcd7aa48a854824a4cdc49c4c
   }
   // onAddItem() {
   //   const ingName = this.nameInputRef.nativeElement.value;
@@ -54,6 +57,7 @@ export class ShoppingEditComponent {
   //   const newIngredient = new Ingredient(ingName, ingAmount);
   //   this.slService.addIngredient(newIngredient);
   // }
+<<<<<<< HEAD
   onClear() {
     this.slForm.reset();
     this.editMode = false;
@@ -63,5 +67,8 @@ export class ShoppingEditComponent {
     this.slService.deleteIngredient(this.editedItemIndex);
     this.onClear;
   }
+=======
+
+>>>>>>> c6d00a74c297d3ffcd7aa48a854824a4cdc49c4c
   ngOnDestroy() {}
 }
