@@ -8,15 +8,46 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrl: './recipe-detail.component.scss',
 })
 export class RecipeDetailComponent {
+  // recipe: Recipe;
+  // id: number;
+  // constructor(
+  //   private recipeService: RecipeService,
+  //   private route: ActivatedRoute,
+  //   private router: Router
+  // ) {}
+  // ngOnInit() {
+  //   // const id = this.route.snapshot.params['id'];
+  //   this.route.params.subscribe((params: Params) => {
+  //     this.id = +params['id'];
+  //     this.recipe = this.recipeService.getRecipe(this.id);
+  //   });
+  // }
+
+  // onAddToShoppingList() {
+  //   this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  //   console.log('onAddToShopping list is called');
+  // }
+  // onEditRecipe() {
+  //   this.router.navigate(['edit'], { relativeTo: this.route });
+
+  //   // this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route }); complex navigation by going up one level
+  // }
+
+  // onDeleteRecipe() {
+  //   this.recipeService.deleteRecipe(this.id);
+  //   this.router.navigate(['/recipes']);
+  // }
+
   recipe: Recipe;
   id: number;
+
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
+
   ngOnInit() {
-    // const id = this.route.snapshot.params['id'];
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
       this.recipe = this.recipeService.getRecipe(this.id);
@@ -25,12 +56,11 @@ export class RecipeDetailComponent {
 
   onAddToShoppingList() {
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
-    console.log('onAddToShopping list is called');
   }
+
   onEditRecipe() {
     this.router.navigate(['edit'], { relativeTo: this.route });
-
-    // this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route }); complex navigation by going up one level
+    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
   onDeleteRecipe() {
